@@ -15,8 +15,7 @@
                 "numSlots": {
                     "type": "integer"
                 }
-            },
-            "additionalProperties": false
+            }
         },
         "defaultProperties": {
             "type": "object",
@@ -191,8 +190,7 @@
                         "blockstate": {
                             "type": "string"
                         }
-                    },
-                    "additionalProperties": true
+                    }
                 },
                 "intProperties": {
                     "type": "object",
@@ -201,8 +199,7 @@
                             "type": "integer",
                             "default": 0
                         }
-                    },
-                    "additionalProperties": true
+                    }
                 },
                 "friction": {
                     "type": "number",
@@ -220,8 +217,7 @@
                     "type": "string",
                     "default": ""
                 }
-            },
-            "additionalProperties": false
+            }
         },
         "blockStates": {
             "type": "object",
@@ -393,8 +389,7 @@
                                 "blockstate": {
                                     "type": "string"
                                 }
-                            },
-                            "additionalProperties": true
+                            }
                         },
                         "intProperties": {
                             "type": "object",
@@ -403,8 +398,7 @@
                                     "type": "integer",
                                     "default": 0
                                 }
-                            },
-                            "additionalProperties": true
+                            }
                         },
                         "friction": {
                             "type": "number",
@@ -425,8 +419,7 @@
                     },
                     "required": [
                         "modelName"
-                    ],
-                    "additionalProperties": false
+                    ]
                 }
             },
             "required": [
@@ -437,6 +430,5 @@
     "required": [
         "stringId",
         "blockStates"
-    ],
-    "additionalProperties": false
+    ]
 }
