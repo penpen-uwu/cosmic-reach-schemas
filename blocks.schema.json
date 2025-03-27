@@ -3,9 +3,6 @@
     "$id": "blocks.schema.json",
     "type": "object",
     "properties": {
-        "$schema": {
-            "type": "string"
-        },
         "stringId": {
             "type": "string"
         },
@@ -24,6 +21,38 @@
         "defaultProperties": {
             "type": "object",
             "properties": {
+                "canPlace": {
+                    "type": "object",
+                    "properties": {
+                        "xOff": {
+                            "type": "integer"
+                        },
+                        "yOff": {
+                            "type": "integer"
+                        },
+                        "zOff": {
+                            "type": "integer"
+                        },
+                        "walkThrough": {
+                            "type": "boolean"
+                        },
+                        "isOpaque": {
+                            "type": "boolean"
+                        },
+                        "has_tag": {
+                            "type": "string"
+                        },
+                        "has_param": {
+                            "type": "string"
+                        },
+                        "has_block_id": {
+                            "type": "string"
+                        },
+                        "has_block_state_id": {
+                            "type": "string"
+                        }
+                    }
+                },
                 "modelName": {
                     "type": [
                         "string",
@@ -200,6 +229,38 @@
                 "^.*": {
                     "type": "object",
                     "properties": {
+                        "canPlace": {
+                            "type": "object",
+                            "properties": {
+                                "xOff": {
+                                    "type": "integer"
+                                },
+                                "yOff": {
+                                    "type": "integer"
+                                },
+                                "zOff": {
+                                    "type": "integer"
+                                },
+                                "walkThrough": {
+                                    "type": "boolean"
+                                },
+                                "isOpaque": {
+                                    "type": "boolean"
+                                },
+                                "has_tag": {
+                                    "type": "string"
+                                },
+                                "has_param": {
+                                    "type": "string"
+                                },
+                                "has_block_id": {
+                                    "type": "string"
+                                },
+                                "has_block_state_id": {
+                                    "type": "string"
+                                }
+                            }
+                        },
                         "modelName": {
                             "type": [
                                 "string",
