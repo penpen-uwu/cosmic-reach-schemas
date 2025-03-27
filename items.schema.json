@@ -1,0 +1,60 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "$id": "items.schema.json",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "itemProperties": {
+            "type": "object",
+            "properties": {
+                "texture": {
+                    "type": "string"
+                },
+                "modelType": {
+                    "type": "string",
+                    "enum": [
+                        "base:item3D",
+                        "base:item2D"
+                    ]
+                },
+                "stackLimit": {
+                    "type": "integer",
+                    "default": 1000,
+                    "minimum": 1
+                },
+                "toolSpeed": {
+                    "type": "number",
+                    "default": 1.0
+                },
+                "durability": {
+                    "type": "integer",
+                    "default": 2147483647,
+                    "minimum": 1
+                },
+                "effectiveBreakingTags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "bounciness": {
+                    "type": "number",
+                    "default": 0.0
+                },
+                "fuelTicks": {
+                    "type": "integer",
+                    "default": 0
+                }
+            },
+            "required": [
+                "texture",
+                "modelType"
+            ]
+        }
+    },
+    "required": [
+        "id"
+    ]
+}
