@@ -2,22 +2,8 @@
     "$schema": "https://json-schema.org/draft-07/schema",
     "$id": "blocks.schema.json",
     "type": "object",
-    "properties": {
-        "stringId": {
-            "type": "string"
-        },
-        "blockEntityId": {
-            "type": "string"
-        },
-        "blockEntityParams": {
-            "type": "object",
-            "properties": {
-                "numSlots": {
-                    "type": "integer"
-                }
-            }
-        },
-        "defaultProperties": {
+    "definitions": {
+        "blockProperties": {
             "type": "object",
             "properties": {
                 "canPlace": {
@@ -218,208 +204,31 @@
                     "default": ""
                 }
             }
+        }
+    },
+    "properties": {
+        "stringId": {
+            "type": "string"
+        },
+        "blockEntityId": {
+            "type": "string"
+        },
+        "blockEntityParams": {
+            "type": "object",
+            "properties": {
+                "numSlots": {
+                    "type": "integer"
+                }
+            }
+        },
+        "defaultProperties": {
+            "$ref": "#/definitions/blockProperties"
         },
         "blockStates": {
             "type": "object",
             "patternProperties": {
                 "^.*": {
-                    "type": "object",
-                    "properties": {
-                        "canPlace": {
-                            "type": "object",
-                            "properties": {
-                                "xOff": {
-                                    "type": "integer"
-                                },
-                                "yOff": {
-                                    "type": "integer"
-                                },
-                                "zOff": {
-                                    "type": "integer"
-                                },
-                                "walkThrough": {
-                                    "type": "boolean"
-                                },
-                                "isOpaque": {
-                                    "type": "boolean"
-                                },
-                                "has_tag": {
-                                    "type": "string"
-                                },
-                                "has_param": {
-                                    "type": "string"
-                                },
-                                "has_block_id": {
-                                    "type": "string"
-                                },
-                                "has_block_state_id": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "modelName": {
-                            "type": [
-                                "string",
-                                "null"
-                            ]
-                        },
-                        "langKey": {
-                            "type": [
-                                "string",
-                                "null"
-                            ]
-                        },
-                        "swapGroupId": {
-                            "type": [
-                                "string",
-                                "null"
-                            ]
-                        },
-                        "allowSwapping": {
-                            "type": "boolean",
-                            "default": true
-                        },
-                        "blockEventsId": {
-                            "type": [
-                                "string",
-                                "null"
-                            ]
-                        },
-                        "itemIcon": {
-                            "type": [
-                                "string",
-                                "null"
-                            ]
-                        },
-                        "hardness": {
-                            "type": "number",
-                            "default": 1.5
-                        },
-                        "blastResistance": {
-                            "type": "number",
-                            "default": 100.0
-                        },
-                        "catalogHidden": {
-                            "type": "boolean",
-                            "default": false
-                        },
-                        "stateGenerators": {
-                            "type": "array",
-                            "items": {
-                                "type": "string"
-                            }
-                        },
-                        "tags": {
-                            "type": "array",
-                            "items": {
-                                "type": "string"
-                            }
-                        },
-                        "isOpaque": {
-                            "type": "boolean",
-                            "default": true
-                        },
-                        "stopsLasers": {
-                            "type": "boolean",
-                            "default": true
-                        },
-                        "walkThrough": {
-                            "type": "boolean",
-                            "default": false
-                        },
-                        "lightAttenuation": {
-                            "type": "integer",
-                            "default": 15,
-                            "minimum": 0,
-                            "maximum": 15
-                        },
-                        "canRaycastForBreak": {
-                            "type": "boolean",
-                            "default": true
-                        },
-                        "canRaycastForPlaceOn": {
-                            "type": "boolean",
-                            "default": true
-                        },
-                        "canRaycastForReplace": {
-                            "type": "boolean",
-                            "default": false
-                        },
-                        "canDrop": {
-                            "type": "boolean",
-                            "default": true
-                        },
-                        "isFluid": {
-                            "type": "boolean",
-                            "default": false
-                        },
-                        "lightLevelRed": {
-                            "type": "integer",
-                            "default": 0
-                        },
-                        "lightLevelGreen": {
-                            "type": "integer",
-                            "default": 0
-                        },
-                        "lightLevelBlue": {
-                            "type": "integer",
-                            "default": 0
-                        },
-                        "rotXZ": {
-                            "type": "integer",
-                            "default": 0
-                        },
-                        "rotation": {
-                            "type": "array",
-                            "items": {
-                                "type": "number"
-                            },
-                            "minItems": 3,
-                            "maxItems": 3
-                        },
-                        "dropId": {
-                            "type": [
-                                "string",
-                                "null"
-                            ]
-                        },
-                        "dropParams": {
-                            "type": "object",
-                            "properties": {
-                                "blockstate": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "intProperties": {
-                            "type": "object",
-                            "properties": {
-                                "fuelTicks": {
-                                    "type": "integer",
-                                    "default": 0
-                                }
-                            }
-                        },
-                        "friction": {
-                            "type": "number",
-                            "default": 1.0
-                        },
-                        "bounciness": {
-                            "type": "number",
-                            "default": 0.0
-                        },
-                        "refractiveIndex": {
-                            "type": "number",
-                            "default": 1.0
-                        },
-                        "placementRules": {
-                            "type": "string",
-                            "default": ""
-                        }
-                    },
-                    "required": [
-                        "modelName"
-                    ]
+                    "$ref": "#/definitions/blockProperties"
                 }
             },
             "required": [
